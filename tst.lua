@@ -25,3 +25,9 @@ print("Trigonometric: ")
 print("sin(z) = " .. cpx.Re(t) .. " + " .. cpx.Im(t) .. "i")
 t = cpx.cos(z)
 print("cos(z) = " .. cpx.Re(t) .. " + " .. cpx.Im(t) .. "i")
+
+-- other
+
+local o = cpx.equals(z, w)
+
+print("is " .. cpx.to_string(z) .. " equals to " .. cpx.to_string(w) .. " ? : " .. tostring(o))

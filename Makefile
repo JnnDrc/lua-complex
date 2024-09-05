@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -O2 -I./src/inc
 LDFLAGS = -L./src/lib -llua54 -lm
 OBJ = complex.o
-.PHONY: win linux
+.PHONY: win linux clean-w clean-u
 
 win:
 	$(MAKE) complex.dll
@@ -13,9 +13,13 @@ linux:
 
 complex.dll: $(OBJ)
 	$(CC) $(OBJ) --shared -o $@ $(LDFLAGS)
-	del /F $(OBJ)
 complex.so:
 	$(CC) $(OBJ) --shared -o $@ $(LDFLAGS)
-	rm -f $(OBJ)
 complex.o:
 	$(CC) -c src/complex.c $(CFLAGS)
+
+clean-w:
+	del /F $(OBJ)
+
+clean-u:
+	rm -f $(OBJ)

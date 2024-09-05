@@ -1,9 +1,15 @@
 # TODO
 
+## How to read
+
+- [] .. : not acomplished meta
+- [] .. ? : possible futere feature
+- [x] .. : acomplished meta
+
 ## Types
 
 [] cpx_rect
-[] cpx_polar
+[] cpx_polar ?
 
 ## Simple arithmetics
 
@@ -59,7 +65,7 @@
 
 ## Other
 
-- [] to_polar(\_r,\_p)
-- [] to_rect(\_r,\_p)
-- [] equals(\_r,\_p)
-- [] to_string(\_r,\_p)
+- [] to_polar(\_r,\_p) ?
+- [] to_rect(\_r,\_p) ?
+- [] equals(\_r,\_p ?)
+- [] to_string(\_r,\_p ? )

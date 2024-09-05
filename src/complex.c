@@ -2,6 +2,8 @@
 #include "inc/lua.h"
 
 #include <math.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define SQUARE(_x) ((_x) * (_x))
 
@@ -118,12 +120,49 @@ int cpx_cos(lua_State *L) {
 
   return 1;
 }
+int cpx_tan(lua_State *L) {
+  // aaaaa
+  return 0;
+}
+
+int cpx_equals(lua_State *L) {
+  Rectangular *z = (Rectangular *)luaL_checkudata(L, 1, "Rectangular");
+  Rectangular *w = (Rectangular *)luaL_checkudata(L, 2, "Rectangular");
+
+  lua_pushboolean(L, ((z->r == w->r) && (z->i == w->i)));
+
+  return 1;
+}
+int cpx_to_string(lua_State *L) {
+  Rectangular *z = (Rectangular *)luaL_checkudata(L, 1, "Rectangular");
+
+  char *buf = malloc(256);
+  if (z->i >= 0) {
+    snprintf(buf, 256, "%lf + %lf", z->r, z->i);
+  } else {
+    snprintf(buf, 256, "%lf - %lf", z->r, z->i);
+  }
+  buf = realloc(buf, strlen(buf));
+  lua_pushstring(L, buf);
+
+  return 1;
+}
 
 int luaopen_complex(lua_State *L) {
-  const luaL_Reg complex_funcs[] = {
-      {"new", cpx_new}, {"Re", cpx_real},  {"Im", cpx_imag}, {"add", cpx_add},
-      {"sub", cpx_sub}, {"mult", cpx_mlt}, {"div", cpx_div}, {"pow", cpx_pow},
-      {"sin", cpx_sin}, {"cos", cpx_cos},  {NULL, NULL}};
+  const luaL_Reg complex_funcs[] = {{"new", cpx_new},
+                                    {"Re", cpx_real},
+                                    {"Im", cpx_imag},
+                                    {"add", cpx_add},
+                                    {"sub", cpx_sub},
+                                    {"mult", cpx_mlt},
+                                    {"div", cpx_div},
+                                    {"pow", cpx_pow},
+                                    {"sin", cpx_sin},
+                                    {"cos", cpx_cos},
+                                    {"tan", cpx_tan},
+                                    {"equals", cpx_equals},
+                                    {"to_string", cpx_to_string},
+                                    {NULL, NULL}};
 
   luaL_newmetatable(L, "Rectangular");
 
