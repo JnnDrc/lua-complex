@@ -1,17 +1,24 @@
 # TODO
 
-## How to read
+## How to read this file
 
 - [] .. : not acomplished meta
 - [] .. ? : possible futere feature
 - [x] .. : acomplished meta
 
-## Types
+## Repo structure
+
+- [x] src/
+- [] tst/
+
+## Library
+
+### Types
 
 [] cpx_rect
 [] cpx_polar ?
 
-## Simple arithmetics
+### Simple arithmetics
 
 - [x] add(\_r,\_p)
 - [x] sub(\_r,\_p)
@@ -23,14 +30,14 @@
 - [] exp(\_r,\_p)
 - [] log(\_r,\_p)
 
-## Trigonometric
+### Trigonometric
 
-### Common
+#### Common
 
 - [x] sin(\_r,\_p)
 - [x] cos(\_r,\_p)
-- [] tan(\_r,\_p)
-- [] cot(\_r,\_p)
+- [x] tan(\_r,\_p)
+- [x] cot(\_r,\_p)
 - [] sec(\_r,\_p)
 - [] csc(\_r,\_p)
 
@@ -41,13 +48,7 @@
 - [] asec(\_r,\_p)
 - [] acsc(\_r,\_p)
 
-### Complex specific
-
-- [] mod(\_r,\_p)
-- [] phase(\_r,\_p)
-- [] conj(\_r,\_p)
-
-### Trigonometric
+#### Hyperbolic
 
 - [] sinh(\_r,\_p)
 - [] cosh(\_r,\_p)
@@ -63,9 +64,15 @@
 - [] asech(\_r,\_p)
 - [] acsch(\_r,\_p)
 
-## Other
+### Complex specific
+
+- [] mod(\_r,\_p)
+- [] phase(\_r,\_p)
+- [x] conj(\_r,\_p)
+
+### Other
 
 - [] to_polar(\_r,\_p) ?
 - [] to_rect(\_r,\_p) ?
-- [] equals(\_r,\_p ?)
-- [] to_string(\_r,\_p ? )
+- [x] equals(\_r,\_p ?)
+- [x] to_string(\_r,\_p ? )
