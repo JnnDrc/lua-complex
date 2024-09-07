@@ -1,5 +1,7 @@
 # TODO
 
+todo list
+
 ## Types
 
 - [x] Complex (cpx_t)
@@ -7,6 +9,8 @@
 ## Complex type functions
 
 - [x] new
+- [x] Re
+- [x] Im
 - [x] conj
 - [x] mod
 - [x] phase
@@ -59,7 +63,7 @@
 - [] asech
 - [] acsch
 
-### Other
+## Other
 
 - [x] equals
 - [x] to_string

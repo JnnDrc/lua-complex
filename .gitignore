@@ -1,3 +1,9 @@
-# files intendedd to not be in the repo
+# ignore final debug library build
 /complex.dll
+/complex.so
+/complex.dylib
+# ignore build objects
 /complex.o
+/trig.o
+/arith.o
+

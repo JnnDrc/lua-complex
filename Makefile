@@ -1,17 +1,16 @@
 # Variables
-
 # Compiler
 CC := gcc
 # Compiling flags
 CFLAGS := -Wall -Wextra -O3
 # linking flags
 LDFLAGS := -llua54 -lm
-# src file(s)
-SRC := src/complex.c
+# src directory
+SRC := src
 # lib directory
-LIB := src/lib
+LIB := $(SRC)/lib
 # object
-OBJ := complex.o
+OBJ := complex.o trig.o arith.o
 
 # Os handling
 ifeq ($(OS), Linux)
@@ -48,13 +47,13 @@ complex.so:
 complex.dylib:
 	$(CC) $(OBJ) --shared -o $@ $(LDFLAGS)
 
-# object
-complex.o: $(SRC)
-	$(CC) -c $^ $(CFLAGS)
+# objects
+%.o : $(SRC)/%.c
+	$(CC) -c $< $(CFLAGS)
 
 # clean for windows
-clean-w:
+clean-win:
 	del /F $(OBJ)
 # clean for unix-like systems
-clean-u:
+clean-unix:
 	rm -f $(OBJ)

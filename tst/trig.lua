@@ -5,6 +5,8 @@ local c
 -- common
 c = cpx.sin(z)
 print("sin(z) = " .. cpx.to_string(c))
+c = cpx.asin(c)
+print("asin(sin(z)) = " .. cpx.to_string(c))
 
 c = cpx.cos(z)
 print("cos(z) = " .. cpx.to_string(c))
