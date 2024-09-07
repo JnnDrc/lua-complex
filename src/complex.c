@@ -184,14 +184,29 @@ int cpx_conj(lua_State *L) {
 
   return 1;
 }
+int cpx_mod(lua_State *L) {
+  Complex *z = (Complex *)luaL_checkudata(L, 1, "Complex");
+
+  lua_pushnumber(L, sqrt((SQUARE(z->r) + SQUARE(z->i))));
+
+  return 1;
+}
+int cpx_phase(lua_State *L) {
+  Complex *z = (Complex *)luaL_checkudata(L, 1, "Complex");
+
+  lua_pushnumber(L, atan2(z->i, z->r));
+
+  return 1;
+}
 
 int luaopen_complex(lua_State *L) {
   const luaL_Reg complex_funcs[] = {
-      {"new", cpx_new}, {"Re", cpx_real},       {"Im", cpx_imag},
-      {"add", cpx_add}, {"sub", cpx_sub},       {"mult", cpx_mlt},
-      {"div", cpx_div}, {"pow", cpx_pow},       {"root", cpx_root},
-      {"sin", cpx_sin}, {"cos", cpx_cos},       {"tan", cpx_tan},
-      {"cot", cpx_cot}, {"equals", cpx_equals}, {"to_string", cpx_to_string},
+      {"new", cpx_new},   {"Re", cpx_real},       {"Im", cpx_imag},
+      {"add", cpx_add},   {"sub", cpx_sub},       {"mult", cpx_mlt},
+      {"div", cpx_div},   {"pow", cpx_pow},       {"root", cpx_root},
+      {"sin", cpx_sin},   {"cos", cpx_cos},       {"tan", cpx_tan},
+      {"cot", cpx_cot},   {"mod", cpx_mod},       {"phase", cpx_phase},
+      {"conj", cpx_conj}, {"equals", cpx_equals}, {"to_string", cpx_to_string},
       {NULL, NULL}};
 
   luaL_newmetatable(L, "Complex");
