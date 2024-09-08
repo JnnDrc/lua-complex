@@ -1,3 +1,6 @@
+#ifndef _CPX_ARITH_H
+#define _CPX_ARITH_H
+
 #include "inc/lua.h"
 
 int cpx_add(lua_State *L);
@@ -10,3 +13,5 @@ int cpx_root(lua_State *L);
 
 int cpx_exp(lua_State *L);
 int cpx_log(lua_State *L);
+
+#endif

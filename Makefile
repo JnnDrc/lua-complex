@@ -10,7 +10,7 @@ SRC := src
 # lib directory
 LIB := $(SRC)/lib
 # object
-OBJ := complex.o trig.o arith.o
+OBJ := complex.o trig.o arith.o other.o
 
 # Os handling
 ifeq ($(OS), Linux)

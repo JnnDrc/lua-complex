@@ -67,7 +67,3 @@ todo list
 
 - [x] equals
 - [x] to_string
-
-## Possible future features
-
-- support to polar form

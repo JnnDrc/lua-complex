@@ -5,6 +5,7 @@
 
 #include "complex.h"
 #include "trig.h"
+#include <math.h>
 
 int cpx_sin(lua_State *L) {
   Complex *z = check_complex(L, 1);
@@ -51,9 +52,62 @@ int cpx_cot(lua_State *L) {
 int cpx_sec(lua_State *L);
 int cpx_csc(lua_State *L);
 
-int cpx_asin(lua_State *L);
-int cpx_acos(lua_State *L);
-int cpx_atan(lua_State *L);
+int cpx_asin(lua_State *L) {
+  Complex *z = check_complex(L, 1);
+
+  // 1 - z^2 = (1 - a^2 - b^2) + 2abi
+  Complex temp = {1 - (SQUARE(z->r) - SQUARE(z->i)), -2 * z->r * z->i};
+  // sqrt(1 - z^2)
+  double m = sqrt(sqrt(SQUARE(temp.r) + SQUARE(temp.i)));
+  double a = atan2(temp.i, temp.r) / 2;
+  temp = (Complex){m * cos(a), m * sin(a)};
+
+  // ln(zi + sqrt(1 - z^2))
+  temp = (Complex){(-1 * z->i) + temp.r, z->r + temp.i};
+
+  m = sqrt(SQUARE(temp.r) + SQUARE(temp.i));
+  a = atan2(temp.i, temp.r);
+
+  create_complex_userdata(L, -1 * (log(m)), a);
+  return 1;
+}
+int cpx_acos(lua_State *L) {
+  Complex *z = check_complex(L, 1);
+
+  // 1 - z^2 = (1 - a^2 - b^2) + 2abi
+  Complex temp = {1 - (SQUARE(z->r) - SQUARE(z->i)), -2 * z->r * z->i};
+  // sqrt(1 - z^2)
+  double m = sqrt(sqrt(SQUARE(temp.r) + SQUARE(temp.i)));
+  double a = atan2(temp.i, temp.r) / 2;
+  temp = (Complex){m * cos(a), m * sin(a)};
+
+  // ln(z+i * sqrt(1 - z^2))
+  temp = (Complex){z->r + (-1 * temp.i), z->i + temp.r};
+
+  m = sqrt(SQUARE(temp.r) + SQUARE(temp.i));
+  a = atan2(temp.i, temp.r);
+
+  create_complex_userdata(L, a, -1 * log(m));
+  return 1;
+}
+int cpx_atan(lua_State *L) {
+  Complex *z = check_complex(L, 1);
+
+  Complex temp = {1 - z->i, z->r};    // 1 + iz
+  Complex temp_2 = {1 + z->i, -z->r}; // 1 - iz
+
+  // (1 + iz)/(1 - iz)
+  double denom = SQUARE(temp_2.r) + SQUARE(temp_2.i);
+  temp = (Complex){(temp.r * temp_2.r + temp.i * temp_2.i) / denom,
+                   (temp.i * temp_2.r - temp.r * temp_2.i) / denom};
+
+  // ln((1 + iz)/(1 - iz))
+  double m = sqrt(SQUARE(temp.r) + SQUARE(temp.i));
+  double a = atan2(temp.i, temp.r);
+
+  create_complex_userdata(L, a / 2.0, log(m) / -2.0);
+  return 1;
+}
 int cpx_acot(lua_State *L);
 int cpx_asec(lua_State *L);
 int cpx_acsc(lua_State *L);

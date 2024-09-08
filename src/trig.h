@@ -1,3 +1,6 @@
+#ifndef _CPX_TRIG_H
+#define _CPX_TRIG_H
+
 #include "inc/lua.h"
 
 int cpx_sin(lua_State *L);
@@ -27,3 +30,5 @@ int cpx_atanh(lua_State *L);
 int cpx_acoth(lua_State *L);
 int cpx_asech(lua_State *L);
 int cpx_acsch(lua_State *L);
+
+#endif /* _CPX_TRIG_H */
