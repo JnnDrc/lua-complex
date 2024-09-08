@@ -11,29 +11,36 @@ SRC := src
 LIB := $(SRC)/lib
 # object
 OBJ := complex.o trig.o arith.o other.o
+# clean recipe
+CLN := 
 
 # Os handling
 ifeq ($(OS), Linux)
 	TARGET := complex.so
 	LDFLAGS += -L./$(LIB)/$(OS)
+	CLN = clean-unix
 else ifeq ($(OS), MacOS)
 	TARGET := complex.dylib
 	LDFLAGS += -L./$(LIB)/$(OS)
+	CLN = clean-unix
 else ifeq ($(OS), Windows)
 	TARGET := complex.dll
 	LDFLAGS += -L./$(LIB)/$(OS)
+	CLN = clean-windows
 else ifeq ($(OS), BSD)
 	TARGET := complex.so
 	LDFLAGS += -L./$(LIB)/$(OS)
-else
-	$(error Platform not supported)
+	CLN = clean-unix
 endif
 
 # Phonys
-.PHONY: install clean-w clean-u
+.PHONY: install clean
 
 install:
 	$(MAKE) $(TARGET)
+
+clean:
+	$(MAKE) $(CLN)
 
 # targets
 
@@ -52,7 +59,7 @@ complex.dylib:
 	$(CC) -c $< $(CFLAGS)
 
 # clean for windows
-clean-win:
+clean-windows:
 	del /F $(OBJ)
 # clean for unix-like systems
 clean-unix:
