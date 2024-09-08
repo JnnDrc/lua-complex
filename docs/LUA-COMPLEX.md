@@ -1,8 +1,6 @@
 # Lua-complex library documentation
 
-## Table of contents
-
-### Pattern
+## Pattern
 
 all documentation follows this pattern
 
@@ -31,11 +29,14 @@ local t = cpx.thing(a,b)
 
 ```
 
+## Table of contents
+
 ### Functions
 
 - [new](#newri)
 - [Re](#Rez)
 - [Im](#Imz)
+- [conj](#conj)
 
 ## Functions
 
