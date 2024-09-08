@@ -4,9 +4,9 @@
 
 ### Functions
 
-- [new](#new)
-- [Re](#Re)
-- [Im](#Im)
+- [new](####new)
+- [Re](####Re)
+- [Im](####Im)
 
 ## Functions
 
@@ -18,8 +18,8 @@ Creates a new complex number
 
 #### Parameters
 
-r : number, the real part
-i : number, the imaginary part
+- r : number, the real part
+- i : number, the imaginary part
 
 #### Example
 
@@ -40,7 +40,7 @@ Gets the real part of a complex number
 
 #### Parameters
 
-z : complex, the complex number
+- z : complex, the complex number
 
 #### Example
 
@@ -55,13 +55,13 @@ print("z's real part is " .. cpx.Re(z))
 
 ### Im(z)
 
-#### SYNOPISI
+#### Synopsis
 
 Gets the imaginary part of a complex number
 
 #### Parameters
 
-z : complex, the complex number
+- z : complex, the complex number
 
 #### Example
 
