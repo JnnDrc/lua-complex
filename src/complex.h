@@ -21,5 +21,6 @@ Complex *check_complex(lua_State *L, int ud);
 #define TAU 6.283185307179586
 #define PI 3.141592653589793
 #define PI_2 1.570796326794896
+#define E 2.718281828459045
 
 #endif /* _CPX_H */

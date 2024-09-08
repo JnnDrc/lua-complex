@@ -25,3 +25,9 @@ print(cpx.to_string(z) .. " ^ 4 = " .. cpx.to_string(c))
 local oldc = c
 c = cpx.root(oldc, 4)
 print("4./ " .. cpx.to_string(oldc) .. " = " .. cpx.to_string(c))
+
+c = cpx.exp(z)
+print("e ^ " .. cpx.to_string(z) .. " = " .. cpx.to_string(c))
+
+c = cpx.log(z)
+print("ln(" .. cpx.to_string(z) .. ") = " .. cpx.to_string(c))

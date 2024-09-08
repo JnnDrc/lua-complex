@@ -67,5 +67,20 @@ int cpx_root(lua_State *L) {
   return 1;
 }
 
-int cpx_exp(lua_State *L);
-int cpx_log(lua_State *L);
+int cpx_exp(lua_State *L) {
+  Complex *z = check_complex(L, 1);
+
+  create_complex_userdata(L, exp(z->r) * cos(z->i), exp(z->r) * sin(z->i));
+
+  return 1;
+}
+int cpx_log(lua_State *L) {
+  Complex *z = check_complex(L, 1);
+
+  double mod = sqrt(SQUARE(z->r) + SQUARE(z->i));
+  double arg = atan2(z->i, z->r);
+
+  create_complex_userdata(L, log(mod), arg);
+
+  return 1;
+}

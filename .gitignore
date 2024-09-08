@@ -1,10 +1,9 @@
-# ignore final debug library build
+# ignore final library build
 /complex.dll
 /complex.so
 /complex.dylib
 # ignore build objects
-/complex.o
-/trig.o
-/arith.o
-/other.o
+/*.o
+# ignore todo
+/TODO.md
 

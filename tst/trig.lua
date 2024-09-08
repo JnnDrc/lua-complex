@@ -24,3 +24,21 @@ print("acos(z) = " .. cpx.to_string(c))
 c = cpx.atan(z)
 print("atan(z) = " .. cpx.to_string(c))
 -- hyperbolic
+
+c = cpx.sinh(z)
+print("sinh(z) = " .. cpx.to_string(c))
+
+c = cpx.cosh(z)
+print("cosh(z) = " .. cpx.to_string(c))
+
+c = cpx.tanh(z)
+print("tanh(z) = " .. cpx.to_string(c))
+
+c = cpx.asinh(z)
+print("asinh(z) = " .. cpx.to_string(c))
+
+c = cpx.acosh(z)
+print("acosh(z) = " .. cpx.to_string(c))
+
+c = cpx.atanh(z)
+print("atanh(z) = " .. cpx.to_string(c))
