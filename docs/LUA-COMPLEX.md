@@ -4,9 +4,9 @@
 
 ### Functions
 
-- [new](####new)
-- [Re](####Re)
-- [Im](####Im)
+- [new](#newri)
+- [Re](#Rez)
+- [Im](#Imz)
 
 ## Functions
 
