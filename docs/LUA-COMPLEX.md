@@ -449,3 +449,273 @@ local z = cpx.new(2,3)
 print(cpx.to_string(cpx.log(z)))
 
 ```
+
+### Trigonometrics
+
+#### Normal
+
+##### sin(z)
+
+[back to table of contents](#table-of-contents)
+
+###### Synopsis
+
+Returns the sine of z
+
+###### Parameters
+
+- z : complex, the complex number
+
+###### Example
+
+```lua
+local cpx = require("complex")
+
+local z = cpx.new(2,3)
+print(cpx.to_string(cpx.sin(z)))
+
+```
+
+##### cos(z)
+
+[back to table of contents](#table-of-contents)
+
+###### Synopsis
+
+Returns the cossine of z
+
+###### Parameters
+
+- z : complex, the complex number
+
+###### Example
+
+```lua
+local cpx = require("complex")
+
+local z = cpx.new(2,3)
+print(cpx.to_string(cpx.cos(z)))
+
+```
+
+##### tan(z)
+
+[back to table of contents](#table-of-contents)
+
+###### Synopsis
+
+Returns the tangent of z
+
+###### Parameters
+
+- z : complex, the complex number
+
+###### Example
+
+```lua
+local cpx = require("complex")
+
+local z = cpx.new(2,3)
+print(cpx.to_string(cpx.tan(z)))
+
+```
+
+##### asin(z)
+
+[back to table of contents](#table-of-contents)
+
+###### Synopsis
+
+Returns the arcsine of z
+
+###### Parameters
+
+- z : complex, the complex number
+
+###### Example
+
+```lua
+local cpx = require("complex")
+
+local z = cpx.new(2,3)
+print(cpx.to_string(cpx.asin(z)))
+
+```
+
+##### acos(z)
+
+[back to table of contents](#table-of-contents)
+
+###### Synopsis
+
+Returns the arccossine of z
+
+###### Parameters
+
+- z : complex, the complex number
+
+###### Example
+
+```lua
+local cpx = require("complex")
+
+local z = cpx.new(2,3)
+print(cpx.to_string(cpx.acos(z)))
+
+```
+
+##### atan(z)
+
+[back to table of contents](#table-of-contents)
+
+###### Synopsis
+
+Returns the arctangent of z
+
+###### Parameters
+
+- z : complex, the complex number
+
+###### Example
+
+```lua
+local cpx = require("complex")
+
+local z = cpx.new(2,3)
+print(cpx.to_string(cpx.atan(z)))
+
+```
+
+#### Hyperbolic
+
+##### sinh(z)
+
+[back to table of contents](#table-of-contents)
+
+###### Synopsis
+
+Returns the hyperbolic sine of z
+
+###### Parameters
+
+- z : complex, the complex number
+
+###### Example
+
+```lua
+local cpx = require("complex")
+
+local z = cpx.new(2,3)
+print(cpx.to_string(cpx.sinh(z)))
+
+```
+
+##### cosh(z)
+
+[back to table of contents](#table-of-contents)
+
+###### Synopsis
+
+Returns the hyperboli cossine of z
+
+###### Parameters
+
+- z : complex, the complex number
+
+###### Example
+
+```lua
+local cpx = require("complex")
+
+local z = cpx.new(2,3)
+print(cpx.to_string(cpx.cosh(z)))
+
+```
+
+##### tanh(z)
+
+[back to table of contents](#table-of-contents)
+
+###### Synopsis
+
+Returns the hyperbolic tangent of z
+
+###### Parameters
+
+- z : complex, the complex number
+
+###### Example
+
+```lua
+local cpx = require("complex")
+
+local z = cpx.new(2,3)
+print(cpx.to_string(cpx.tanh(z)))
+
+```
+
+##### asinh(z)
+
+[back to table of contents](#table-of-contents)
+
+###### Synopsis
+
+Returns the hyperbolic arcsine of z
+
+###### Parameters
+
+- z : complex, the complex number
+
+###### Example
+
+```lua
+local cpx = require("complex")
+
+local z = cpx.new(2,3)
+print(cpx.to_string(cpx.asinh(z)))
+
+```
+
+##### acosh(z)
+
+[back to table of contents](#table-of-contents)
+
+###### Synopsis
+
+Returns the hyperbolic arccossine of z
+
+###### Parameters
+
+- z : complex, the complex number
+
+###### Example
+
+```lua
+local cpx = require("complex")
+
+local z = cpx.new(2,3)
+print(cpx.to_string(cpx.acosh(z)))
+
+```
+
+##### atanh(z)
+
+[back to table of contents](#table-of-contents)
+
+###### Synopsis
+
+Returns the hyperbolic arctangent of z
+
+###### Parameters
+
+- z : complex, the complex number
+
+###### Example
+
+```lua
+local cpx = require("complex")
+
+local z = cpx.new(2,3)
+print(cpx.to_string(cpx.atanh(z)))
+
+```
