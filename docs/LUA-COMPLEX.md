@@ -1,7 +1,5 @@
 # Lua-complex library documentation
 
-!THIS IS NOT DONE YET!
-
 ## Table of contents
 
 ### Types
