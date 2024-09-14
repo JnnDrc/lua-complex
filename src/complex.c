@@ -16,12 +16,12 @@ Complex *create_complex_userdata(lua_State *L, double r, double i) {
   Complex *cpx = (Complex *)lua_newuserdata(L, sizeof(Complex));
   cpx->r = r;
   cpx->i = i;
-  luaL_setmetatable(L, "Complex");
+  luaL_setmetatable(L, "complex");
 
   return cpx;
 }
 Complex *check_complex(lua_State *L, int ud) {
-  return (Complex *)luaL_checkudata(L, ud, "Complex");
+  return (Complex *)luaL_checkudata(L, ud, "complex");
 }
 
 int cpx_new(lua_State *L);
@@ -71,7 +71,7 @@ int luaopen_complex(lua_State *L) {
                                     {"to_string", cpx_to_string},
                                     {NULL, NULL}};
 
-  luaL_newmetatable(L, "Complex");
+  luaL_newmetatable(L, "complex");
 
   luaL_newlib(L, complex_funcs);
 
